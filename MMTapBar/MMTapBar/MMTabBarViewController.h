@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 
 @protocol MMTabBarViewDataSource <NSObject>
 @required
-
+- (NSArray *)infomationsForViewController:(MMTabBarViewController *)tabBarViewController;
 - (NSUInteger )numberOfItemsInViewController:(MMTabBarViewController *)tabBarViewController;
 - (MMTabBarModel *)infomationInViewController:(MMTabBarViewController *)tabBarViewController infoForItemAtIndex:(NSUInteger)index;
 @end

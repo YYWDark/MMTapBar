@@ -23,6 +23,7 @@ static NSString *identifer = @"cellID";
 @property (nonatomic, strong) NSMutableArray *leftMargins;              // store title originX
 @property (nonatomic, strong) NSMutableArray *titlleLabels;             // 储存标题的容器
 
+
 @property (nonatomic, assign) CGFloat titleContentWidth;                //titleScrollView 显示内容的总宽度
 @property (nonatomic, assign) CGFloat tabBarHeight;                     //titleScrollView的高度 default is 40.0f
 @property (nonatomic, assign) CGFloat underlineHeight;                  //default is 2.0f
@@ -112,6 +113,7 @@ static NSString *identifer = @"cellID";
             break;
     }
 }
+
 /**
  *  计算每个title的宽度 和titleScrollView显示的宽度
  */
@@ -211,6 +213,15 @@ static NSString *identifer = @"cellID";
 }
 #pragma mark - public method
 - (void)reload{
+    if ([self.dataSource respondsToSelector:@selector(infomationsForViewController:)]) {
+      NSArray *array = [self.dataSource infomationsForViewController:self];
+      
+        for (MMTabBarModel *model in array) {
+        [self addChildViewController:[[NSClassFromString(model.controllerClassName) alloc] init]];
+        }
+        
+    }
+    
     [self _customTabBar];
     [self _customTitles];
     [self _customUnderline];
@@ -243,8 +254,16 @@ static NSString *identifer = @"cellID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    MMTabBarCell *cell = (MMTabBarCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
-    cell.model = [self.dataSource infomationInViewController:self infoForItemAtIndex:indexPath.row];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
+    
+    // 移除之前的子控件
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    // 添加控制器
+    UIViewController *vc = self.childViewControllers[indexPath.row];
+    vc.view.frame = CGRectMake(0, 0, self.collectionView.width, self.collectionView.height);
+    [cell.contentView addSubview:vc.view];
+    
     return cell;
 }
 
@@ -305,6 +324,8 @@ static NSString *identifer = @"cellID";
         //设置滑动的方向
         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero collectionViewLayout:layout];
+        
+        _collectionView.backgroundColor = [UIColor greenColor];
         _collectionView.showsVerticalScrollIndicator = YES;
         _collectionView.showsHorizontalScrollIndicator = YES;
         _collectionView.pagingEnabled = YES;
@@ -313,7 +334,7 @@ static NSString *identifer = @"cellID";
         _collectionView.delegate   =self;
         
         //注册cell
-        [_collectionView registerClass:[MMTabBarCell class] forCellWithReuseIdentifier:identifer];
+        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifer];
         
         [self.view addSubview:self.collectionView];
     }

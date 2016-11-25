@@ -22,12 +22,10 @@ static NSString *cellID = @"MMCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -38,6 +36,7 @@ static NSString *cellID = @"MMCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.textLabel.text = self.dataArr[indexPath.row];
+    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
@@ -45,6 +44,7 @@ static NSString *cellID = @"MMCell";
 //    id vc = [[NSClassFromString(self.dataArr[indexPath.row]) alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 //}
+
 #pragma mark - Getter
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -63,7 +63,7 @@ static NSString *cellID = @"MMCell";
 - (NSMutableArray *)dataArr{
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
-        for (int index = 0; index < 1; index ++) {
+        for (int index = 0; index < 30; index ++) {
             [_dataArr addObject:[NSString stringWithFormat:@"第%d个单元格",index]];
         }
     }

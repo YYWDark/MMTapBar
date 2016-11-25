@@ -38,7 +38,9 @@
 
 #pragma mark - MMTabBarViewDataSource
 
-
+- (NSArray *)infomationsForViewController:(MMTabBarViewController *)tabBarViewController{
+    return [self.dataArr copy];
+}
 
 - (NSUInteger )numberOfItemsInViewController:(MMTabBarViewController *)tabBarViewController {
     return self.dataArr.count;
@@ -51,7 +53,7 @@
 #pragma mark - MMTabBarViewDelegate
 //=====================================tabBar=====================================
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor whiteColor];
+    return [UIColor redColor];
 }
 
 - (CGFloat)tabBarViewControllerShowTitleScrollViewHeight:(MMTabBarViewController *)tabBarViewController{
