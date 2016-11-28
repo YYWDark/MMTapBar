@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMTabBarViewController.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : MMTabBarViewController
 
 @end

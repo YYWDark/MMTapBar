@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "MMHeader.h"
-#import "MMTabBarViewController.h"
 #import "FirstViewController.h"
+#import "MMTabBarViewController.h"
+
 @interface ViewController () <MMTabBarViewDataSource, MMTabBarViewDelegate>
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @end
@@ -20,14 +21,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    MMTabBarViewController *vc =[[MMTabBarViewController alloc] init];
-    vc.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.height - 49 - 64);
-    vc.dataSource = self;
-    vc.delegate = self;
-    [self.view addSubview:vc.view];
-    [self addChildViewController:vc];
-    
-    [vc reload];
+//    MMTabBarViewController *vc =[[MMTabBarViewController alloc] init];
+//    vc.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.height - 64);
+//    vc.dataSource = self;
+//    vc.delegate = self;
+//    [self.view addSubview:vc.view];
+//    [self addChildViewController:vc];
+//    
+//    [vc reload];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +54,7 @@
 #pragma mark - MMTabBarViewDelegate
 //=====================================tabBar=====================================
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor redColor];
+    return [UIColor whiteColor];
 }
 
 - (CGFloat)tabBarViewControllerShowTitleScrollViewHeight:(MMTabBarViewController *)tabBarViewController{
@@ -71,11 +72,11 @@
 
 //=====================================titles=====================================
 - (UIColor *)tabBarViewControllerShowTitleUnSelectedColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor redColor];
+    return [UIColor blackColor];
 }
 
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor blueColor];
+    return [UIColor whiteColor];
 }
 
 #pragma mark - get
@@ -84,7 +85,7 @@
         _dataArr = [NSMutableArray array];
         
         MMTabBarModel *model1 = [[MMTabBarModel alloc] init];
-        model1.controllerClassName = @"FirstViewController";
+        model1.controllerClassName = @"BaseViewController";
         model1.controllerTitle = [NSString stringWithFormat:@"洛杉矶湖人"];
         
         MMTabBarModel *model2 = [[MMTabBarModel alloc] init];

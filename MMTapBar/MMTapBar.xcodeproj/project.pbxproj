@@ -23,6 +23,8 @@
 		757470C61DE3E95800A02655 /* MMTabBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C51DE3E95800A02655 /* MMTabBarCell.m */; };
 		757470C91DE3F5C500A02655 /* MMTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C81DE3F5C500A02655 /* MMTitleScrollView.m */; };
 		75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB97491DE6DBEF007A43CC /* FirstViewController.m */; };
+		75BB974E1DEC1C0F007A43CC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB974D1DEC1C0F007A43CC /* BaseViewController.m */; };
+		75BB97511DEC1CAA007A43CC /* OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB97501DEC1CAA007A43CC /* OneVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		757470C81DE3F5C500A02655 /* MMTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTitleScrollView.m; sourceTree = "<group>"; };
 		75BB97481DE6DBEF007A43CC /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		75BB97491DE6DBEF007A43CC /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		75BB974C1DEC1C0F007A43CC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		75BB974D1DEC1C0F007A43CC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		75BB974F1DEC1CAA007A43CC /* OneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneVC.h; sourceTree = "<group>"; };
+		75BB97501DEC1CAA007A43CC /* OneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		7574707C1DE2F4A200A02655 /* MMTapBar */ = {
 			isa = PBXGroup;
 			children = (
+				75BB974B1DEC1BAC007A43CC /* subViewControllers */,
 				75BB97461DE6DBAB007A43CC /* MMGroup */,
 				757470801DE2F4A200A02655 /* AppDelegate.h */,
 				757470811DE2F4A200A02655 /* AppDelegate.m */,
@@ -228,6 +235,17 @@
 				757470BB1DE3D63B00A02655 /* MMHeader.h */,
 			);
 			name = Header;
+			sourceTree = "<group>";
+		};
+		75BB974B1DEC1BAC007A43CC /* subViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75BB974C1DEC1C0F007A43CC /* BaseViewController.h */,
+				75BB974D1DEC1C0F007A43CC /* BaseViewController.m */,
+				75BB974F1DEC1CAA007A43CC /* OneVC.h */,
+				75BB97501DEC1CAA007A43CC /* OneVC.m */,
+			);
+			name = subViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BB97511DEC1CAA007A43CC /* OneVC.m in Sources */,
 				75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */,
+				75BB974E1DEC1C0F007A43CC /* BaseViewController.m in Sources */,
 				757470C21DE3E62D00A02655 /* NSObject+Calculate.m in Sources */,
 				757470BA1DE3D62F00A02655 /* UIView+Extension.m in Sources */,
 				757470851DE2F4A200A02655 /* ViewController.m in Sources */,

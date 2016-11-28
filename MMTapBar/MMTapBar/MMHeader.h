@@ -13,6 +13,8 @@
 
 static const CGFloat titleFontSize = 14.0f;
 static  CGFloat titleHorizontalMargin = 10.0f;
+static  CGFloat titleScrollViewToTop = 0.0f;
+static  CGFloat collectionViewToBottom = 0.0f;
 #define kScreenHeigth [UIScreen mainScreen].bounds.size.height
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #endif /* MMHeader_h */

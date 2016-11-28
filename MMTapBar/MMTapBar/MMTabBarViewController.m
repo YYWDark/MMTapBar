@@ -43,6 +43,7 @@ static NSString *identifer = @"cellID";
 @implementation MMTabBarViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.automaticallyAdjustsScrollViewInsets = NO;
     [self _initMethod];
 }
 
@@ -52,8 +53,12 @@ static NSString *identifer = @"cellID";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.titleScrollView.frame = CGRectMake(0, 0, self.view.width, _tabBarHeight);
-    self.collectionView.frame  = CGRectMake(0, _tabBarHeight, self.view.width, self.view.height - _tabBarHeight);
+    if (!self.dataSource) return;
+    self.titleScrollView.frame = CGRectMake(0, titleScrollViewToTop, self.view.width, _tabBarHeight);
+    self.collectionView.frame  = CGRectMake(0, self.titleScrollView.bottom, self.view.width, self.view.height - self.titleScrollView.bottom - collectionViewToBottom);
+  
+    
+    
     
     [self _calculateEachLabelTotalWidthAndTitleContentWidth];
     [self _layoutTitleScrollViewLayoutSubviews];
@@ -137,7 +142,10 @@ static NSString *identifer = @"cellID";
     self.underlineHeight = 2.0f;
     self.tabBarHeight = 40.0f;
     self.maskViewCornerRadius = 8.0f;
-
+    
+//    self.navigationController.navigationBarHidden == NO ?YZNavBarH:statusH;
+    titleScrollViewToTop = self.navigationController == nil?0.0:64.0;
+    collectionViewToBottom = self.tabBarController == nil?0.0:49.0;
     //type
     self.gradientType = MMTabBarViewGradientTypeMasking;
     
@@ -214,10 +222,13 @@ static NSString *identifer = @"cellID";
 #pragma mark - public method
 - (void)reload{
     if ([self.dataSource respondsToSelector:@selector(infomationsForViewController:)]) {
-      NSArray *array = [self.dataSource infomationsForViewController:self];
+        NSArray *array = [self.dataSource infomationsForViewController:self];
       
         for (MMTabBarModel *model in array) {
-        [self addChildViewController:[[NSClassFromString(model.controllerClassName) alloc] init]];
+            UIViewController *vc = [[NSClassFromString(model.controllerClassName) alloc] init];
+//             vc.view.frame = CGRectMake(0, 0, self.view.width,100);
+           [self addChildViewController:vc];
+        
         }
         
     }
@@ -236,7 +247,7 @@ static NSString *identifer = @"cellID";
     CGFloat offsetX = label.tag * self.view.width;
     self.pageIndex = label.tag;
     [self _updateUnderlineAtIndex:label.tag];
-    [self.collectionView setContentOffset:CGPointMake(offsetX, -64) animated:NO];
+    [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
     self.lastOffsetX = offsetX;
     [self _updateSelectedTitle:label.tag];
     self.isInTapAction = NO;
@@ -255,18 +266,18 @@ static NSString *identifer = @"cellID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
-    
-    // 移除之前的子控件
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    // 添加控制器
     UIViewController *vc = self.childViewControllers[indexPath.row];
     vc.view.frame = CGRectMake(0, 0, self.collectionView.width, self.collectionView.height);
+    vc.view.backgroundColor = [UIColor randomColor];
     [cell.contentView addSubview:vc.view];
     
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return  CGSizeMake(self.view.width , self.view.height - self.titleScrollView.bottom - collectionViewToBottom);
+}
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.isInTapAction) return;
@@ -314,20 +325,22 @@ static NSString *identifer = @"cellID";
     self.underline.left += underLineoffsetX;
 }
 
+
 #pragma mark - get
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.itemSize = CGSizeMake(self.view.width , self.view.height - _tabBarHeight);
-        layout.minimumLineSpacing = .01f;
-        layout.minimumInteritemSpacing = .01f;
+//        layout.itemSize = CGSizeMake(self.view.width , self.view.height - _tabBarHeight);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 10;
         //设置滑动的方向
         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero collectionViewLayout:layout];
         
-        _collectionView.backgroundColor = [UIColor greenColor];
-        _collectionView.showsVerticalScrollIndicator = YES;
-        _collectionView.showsHorizontalScrollIndicator = YES;
+        _collectionView.backgroundColor = [UIColor clearColor];
+//        _collectionView.showsVerticalScrollIndicator = YES;
+//        _collectionView.showsHorizontalScrollIndicator = YES;
         _collectionView.pagingEnabled = YES;
         //签订协议
         _collectionView.dataSource = self;
