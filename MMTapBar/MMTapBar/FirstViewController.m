@@ -21,61 +21,22 @@ static NSString *cellID = @"MMCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataSource = self;
-    self.delegate = self;
-    self.gradientType = MMTabBarViewGradientTypeUnderline;
-    [self reload];
-//    [self.view addSubview:self.tableView];
+    [self initMehod];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-//#pragma mark - UITableViewDataSource
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.dataArr.count;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-//    cell.textLabel.text = self.dataArr[indexPath.row];
-////    cell.backgroundColor = [UIColor redColor];
-//    return cell;
-//}
-//
-////- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-////    id vc = [[NSClassFromString(self.dataArr[indexPath.row]) alloc] init];
-////    [self.navigationController pushViewController:vc animated:YES];
-////}
-//
-//#pragma mark - Getter
-//- (UITableView *)tableView{
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, self.view.frame.size.width, self.view.frame.size.height - kNavigationHeight ) style:UITableViewStylePlain];
-//        _tableView.dataSource = self;
-//        _tableView.delegate = self;
-//        _tableView.scrollEnabled = YES;
-//        _tableView.showsVerticalScrollIndicator = YES;
-//        _tableView.showsHorizontalScrollIndicator = YES;
-//        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-//        
-//    }
-//    return _tableView;
-//}
-//
-//- (NSMutableArray *)dataArr{
-//    if (!_dataArr) {
-//        _dataArr = [NSMutableArray array];
-//        for (int index = 0; index < 30; index ++) {
-//            [_dataArr addObject:[NSString stringWithFormat:@"第%d个单元格",index]];
-//        }
-//    }
-//    return _dataArr;
-//}
+- (void)initMehod{
+    self.dataSource = self;
+    self.delegate = self;
+    //指定样式
+    self.gradientType = MMTabBarViewGradientTypeMasking;
+    [self reload];
+}
 
 #pragma mark - MMTabBarViewDataSource
-
 - (NSArray *)infomationsForViewController:(MMTabBarViewController *)tabBarViewController{
     return [self.dataArr copy];
 }
@@ -88,6 +49,7 @@ static NSString *cellID = @"MMCell";
     return self.dataArr[index];
 }
 
+/*
 #pragma mark - MMTabBarViewDelegate
 //=====================================tabBar=====================================
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController{
@@ -113,18 +75,18 @@ static NSString *cellID = @"MMCell";
 }
 
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor colorWithHexString:@"3EBFFF"];
+    return [UIColor colorWithHexString:@"FC6E68"];
 }
 
-//- (CGFloat)tabBarViewControllerShowTitleMargin:(MMTabBarViewController *)tabBarViewController{
-//    return 80.0;
-//}
+- (CGFloat)tabBarViewControllerShowTitleMargin:(MMTabBarViewController *)tabBarViewController{
+    return 20.0;
+}
 //=====================================MarkView=====================================
 //显示当前遮罩层的颜色
 - (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController{
     return [UIColor colorWithHexString:@"3EBFFF"];
 }
-
+*/
 #pragma mark - get
 - (NSMutableArray *)dataArr {
     if (!_dataArr) {
@@ -175,11 +137,11 @@ static NSString *cellID = @"MMCell";
         [_dataArr addObject:model3];
         [_dataArr addObject:model4];
         [_dataArr addObject:model5];
-//        [_dataArr addObject:model6];
-//        [_dataArr addObject:model7];
-//        [_dataArr addObject:model8];
-//        [_dataArr addObject:model9];
-//        [_dataArr addObject:model10];
+        [_dataArr addObject:model6];
+        [_dataArr addObject:model7];
+        [_dataArr addObject:model8];
+        [_dataArr addObject:model9];
+        [_dataArr addObject:model10];
         
     }
     return _dataArr;

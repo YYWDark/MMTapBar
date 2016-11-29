@@ -17,12 +17,10 @@
     float iosVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (iosVersion >= 7.0) {
         rect = [text boundingRectWithSize:CGSizeMake(width, 1000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font} context:nil];
-    }
-    else {
+    }else {
         CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(width, 1000) lineBreakMode:NSLineBreakByWordWrapping];
         rect = CGRectMake(0, 0, size.width, size.height);
     }
-//    NSLog(@"%@: W: %.f, H: %.f", self, rect.size.width, rect.size.height);
     return rect.size.height;
 }
 
@@ -33,12 +31,10 @@
     float iosVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (iosVersion >= 7.0) {
         rect = [text boundingRectWithSize:CGSizeMake(1000, height) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font} context:nil];
-    }
-    else {
+    }else {
         CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(1000, height) lineBreakMode:NSLineBreakByWordWrapping];
         rect = CGRectMake(0, 0, size.width, size.height);
     }
-//    NSLog(@"%@: W: %.f, H: %.f", self, rect.size.width, rect.size.height);
     return rect.size.width ;
 }
 @end

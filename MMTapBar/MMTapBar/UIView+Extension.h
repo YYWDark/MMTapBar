@@ -33,5 +33,4 @@
 
 @property(nonatomic) CGFloat centerY;
 
-- (UIViewController *)getviewController;
 @end

@@ -37,24 +37,24 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 @protocol MMTabBarViewDelegate <NSObject>
 @optional
 //=====================================TabBar=====================================
-//显示当前titleScrollView背景的颜色
+//显示当前titleScrollView背景的颜色  defalut is #485CD5
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController;
-//显示当前ScrollViewHeight的高度
+//显示当前titleScrollView的高度    defalut is 40.0f
 - (CGFloat)tabBarViewControllerShowTitleScrollViewHeight:(MMTabBarViewController *)tabBarViewController;
 //=====================================Titles=====================================
-//显示当前title没有选中标题的颜色
+//显示当前title没有选中标题的颜色     defalut is blackColor
 - (UIColor *)tabBarViewControllerShowTitleUnSelectedColor:(MMTabBarViewController *)tabBarViewController;
-//显示当前title选中标题的颜色
+//显示当前title选中标题的颜色        defalut is whiteColor
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController;
-//设置title到左右两边的间距 默认是10.0f;
+//设置title到左右两边缘的距离          defalut is 10.0f;
 - (CGFloat)tabBarViewControllerShowTitleMargin:(MMTabBarViewController *)tabBarViewController;
 //=====================================Underline=====================================
-//显示当前下划线背景颜色颜色
+//显示当前下划线背景颜色颜色          defalut is whiteColor
 - (UIColor *)tabBarViewControllerShowUnderlineBackgroundColor:(MMTabBarViewController *)tabBarViewController;
-//显示当前下划线高度
+//显示当前下划线高度                 defalut is 2.0
 - (CGFloat)tabBarViewControllerShowUnderlineHeight:(MMTabBarViewController *)tabBarViewController;
 //=====================================MarkView=====================================
-//显示当前遮罩层的颜色
+//显示当前遮罩层的颜色               defalut is #333333
 - (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController;
 @end
 

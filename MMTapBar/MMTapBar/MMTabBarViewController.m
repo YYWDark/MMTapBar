@@ -154,7 +154,6 @@ static NSString *identifer = @"cellID";
 
 - (void)_initMethod {
     self.titleWidthArray = [NSMutableArray array];
-    
     self.titlleLabels = [NSMutableArray array];
     self.dataArray = [NSMutableArray array];
     self.underlineHeight = 2.0f;
@@ -166,10 +165,11 @@ static NSString *identifer = @"cellID";
     //type
     self.gradientType = MMTabBarViewGradientTypeNormal;
     //color
-    self.selectedTitleColor = [UIColor redColor];
+    self.selectedTitleColor = [UIColor whiteColor];
     self.unselectedTitleColor = [UIColor blackColor];
-    self.underlineBackgroundColor = [UIColor redColor];
-    self.titleScrollViewBackgroundColor = [UIColor whiteColor];
+    self.underlineBackgroundColor = [UIColor whiteColor];
+    self.titleScrollViewBackgroundColor = [UIColor colorWithHexString:@"485CD5"];
+    self.maskBackBackgroundColor = [UIColor colorWithHexString:@"333333"];
 }
 
 - (void)_updateUnderlineAtIndex:(NSUInteger)selectedIndex {
@@ -212,21 +212,17 @@ static NSString *identifer = @"cellID";
     NSUInteger leftIndex =  offsetX/self.view.width;
     NSUInteger rightIndex =  leftIndex + 1;
     if (rightIndex >= self.titlleLabels.count )  return;
-    
     //拿到滑动的距离
     CGFloat slidedDistance = offsetX - self.lastOffsetX;
-    
     CGFloat rightCenter = [self.titlleLabels[rightIndex] left];
     CGFloat leftCenter  = [self.titlleLabels[leftIndex] left];
     //拿到两个文本之间left的差
     CGFloat centerDistance = rightCenter - leftCenter;
     CGFloat titleWidthDistance = [self.titleWidthArray[rightIndex] floatValue] - [self.titleWidthArray[leftIndex] floatValue];
-    
     // 计算当前下划线偏移量
     CGFloat underLineoffsetX = slidedDistance * centerDistance / self.view.width;
     // 宽度递增偏移量
     CGFloat underLineWidth = slidedDistance * titleWidthDistance / self.view.width;
-    
     switch (self.gradientType) {
         case MMTabBarViewGradientTypeUnderline:{
             self.underline.width += underLineWidth;
@@ -329,7 +325,6 @@ static NSString *identifer = @"cellID";
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIViewController *vc = self.childViewControllers[indexPath.row];
     vc.view.frame = CGRectMake(0, 0, self.collectionView.width, self.collectionView.height);
-//    vc.view.backgroundColor = [UIColor randomColor];
     [cell.contentView addSubview:vc.view];
     return cell;
 }
@@ -375,6 +370,8 @@ static NSString *identifer = @"cellID";
         
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.pagingEnabled = YES;
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         //签订协议
         _collectionView.dataSource = self;
         _collectionView.delegate   =self;
