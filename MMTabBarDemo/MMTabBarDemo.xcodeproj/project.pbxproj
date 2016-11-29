@@ -66,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7574707A1DE2F4A200A02655 /* MMTapBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTapBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7574707A1DE2F4A200A02655 /* MMTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7574707E1DE2F4A200A02655 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		757470801DE2F4A200A02655 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		757470811DE2F4A200A02655 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,10 +76,10 @@
 		757470891DE2F4A200A02655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7574708C1DE2F4A200A02655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7574708E1DE2F4A200A02655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		757470931DE2F4A200A02655 /* MMTapBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTapBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		757470931DE2F4A200A02655 /* MMTabBarDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTabBarDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757470971DE2F4A200A02655 /* MMTapBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTapBarTests.m; sourceTree = "<group>"; };
 		757470991DE2F4A200A02655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7574709E1DE2F4A200A02655 /* MMTapBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTapBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7574709E1DE2F4A200A02655 /* MMTabBarDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTabBarDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757470A21DE2F4A200A02655 /* MMTapBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTapBarUITests.m; sourceTree = "<group>"; };
 		757470A41DE2F4A200A02655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757470B01DE3D43200A02655 /* MMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarViewController.h; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		757470711DE2F4A200A02655 = {
 			isa = PBXGroup;
 			children = (
-				7574707C1DE2F4A200A02655 /* MMTapBar */,
+				7574707C1DE2F4A200A02655 /* MMTabBar */,
 				757470961DE2F4A200A02655 /* MMTapBarTests */,
 				757470A11DE2F4A200A02655 /* MMTapBarUITests */,
 				7574707B1DE2F4A200A02655 /* Products */,
@@ -185,18 +185,18 @@
 		7574707B1DE2F4A200A02655 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7574707A1DE2F4A200A02655 /* MMTapBar.app */,
-				757470931DE2F4A200A02655 /* MMTapBarTests.xctest */,
-				7574709E1DE2F4A200A02655 /* MMTapBarUITests.xctest */,
+				7574707A1DE2F4A200A02655 /* MMTabBarDemo.app */,
+				757470931DE2F4A200A02655 /* MMTabBarDemo.xctest */,
+				7574709E1DE2F4A200A02655 /* MMTabBarDemo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7574707C1DE2F4A200A02655 /* MMTapBar */ = {
+		7574707C1DE2F4A200A02655 /* MMTabBar */ = {
 			isa = PBXGroup;
 			children = (
 				759776281DED519200A77EC4 /* MJRefresh */,
-				75BB974B1DEC1BAC007A43CC /* subViewControllers */,
+				75BB974B1DEC1BAC007A43CC /* SubViewcontrollers */,
 				75BB97461DE6DBAB007A43CC /* MMGroup */,
 				757470801DE2F4A200A02655 /* AppDelegate.h */,
 				757470811DE2F4A200A02655 /* AppDelegate.m */,
@@ -210,6 +210,7 @@
 				7574708E1DE2F4A200A02655 /* Info.plist */,
 				7574707D1DE2F4A200A02655 /* Supporting Files */,
 			);
+			name = MMTabBar;
 			path = MMTapBar;
 			sourceTree = "<group>";
 		};
@@ -384,7 +385,7 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
-		75BB974B1DEC1BAC007A43CC /* subViewControllers */ = {
+		75BB974B1DEC1BAC007A43CC /* SubViewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
 				75BB974C1DEC1C0F007A43CC /* OneVC.h */,
@@ -398,15 +399,15 @@
 				759776241DED4DCD00A77EC4 /* FivethVC.h */,
 				759776251DED4DCD00A77EC4 /* FivethVC.m */,
 			);
-			name = subViewControllers;
+			name = SubViewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		757470791DE2F4A200A02655 /* MMTapBar */ = {
+		757470791DE2F4A200A02655 /* MMTabBarDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757470A71DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBar" */;
+			buildConfigurationList = 757470A71DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemo" */;
 			buildPhases = (
 				757470761DE2F4A200A02655 /* Sources */,
 				757470771DE2F4A200A02655 /* Frameworks */,
@@ -416,14 +417,14 @@
 			);
 			dependencies = (
 			);
-			name = MMTapBar;
+			name = MMTabBarDemo;
 			productName = MMTapBar;
-			productReference = 7574707A1DE2F4A200A02655 /* MMTapBar.app */;
+			productReference = 7574707A1DE2F4A200A02655 /* MMTabBarDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		757470921DE2F4A200A02655 /* MMTapBarTests */ = {
+		757470921DE2F4A200A02655 /* MMTabBarDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757470AA1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBarTests" */;
+			buildConfigurationList = 757470AA1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemoTests" */;
 			buildPhases = (
 				7574708F1DE2F4A200A02655 /* Sources */,
 				757470901DE2F4A200A02655 /* Frameworks */,
@@ -434,14 +435,14 @@
 			dependencies = (
 				757470951DE2F4A200A02655 /* PBXTargetDependency */,
 			);
-			name = MMTapBarTests;
+			name = MMTabBarDemoTests;
 			productName = MMTapBarTests;
-			productReference = 757470931DE2F4A200A02655 /* MMTapBarTests.xctest */;
+			productReference = 757470931DE2F4A200A02655 /* MMTabBarDemo.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7574709D1DE2F4A200A02655 /* MMTapBarUITests */ = {
+		7574709D1DE2F4A200A02655 /* MMTabBarDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 757470AD1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBarUITests" */;
+			buildConfigurationList = 757470AD1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemoUITests" */;
 			buildPhases = (
 				7574709A1DE2F4A200A02655 /* Sources */,
 				7574709B1DE2F4A200A02655 /* Frameworks */,
@@ -452,9 +453,9 @@
 			dependencies = (
 				757470A01DE2F4A200A02655 /* PBXTargetDependency */,
 			);
-			name = MMTapBarUITests;
+			name = MMTabBarDemoUITests;
 			productName = MMTapBarUITests;
-			productReference = 7574709E1DE2F4A200A02655 /* MMTapBarUITests.xctest */;
+			productReference = 7574709E1DE2F4A200A02655 /* MMTabBarDemo.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -479,7 +480,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 757470751DE2F4A200A02655 /* Build configuration list for PBXProject "MMTapBar" */;
+			buildConfigurationList = 757470751DE2F4A200A02655 /* Build configuration list for PBXProject "MMTabBarDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -492,9 +493,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				757470791DE2F4A200A02655 /* MMTapBar */,
-				757470921DE2F4A200A02655 /* MMTapBarTests */,
-				7574709D1DE2F4A200A02655 /* MMTapBarUITests */,
+				757470791DE2F4A200A02655 /* MMTabBarDemo */,
+				757470921DE2F4A200A02655 /* MMTabBarDemoTests */,
+				7574709D1DE2F4A200A02655 /* MMTabBarDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -589,12 +590,12 @@
 /* Begin PBXTargetDependency section */
 		757470951DE2F4A200A02655 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 757470791DE2F4A200A02655 /* MMTapBar */;
+			target = 757470791DE2F4A200A02655 /* MMTabBarDemo */;
 			targetProxy = 757470941DE2F4A200A02655 /* PBXContainerItemProxy */;
 		};
 		757470A01DE2F4A200A02655 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 757470791DE2F4A200A02655 /* MMTapBar */;
+			target = 757470791DE2F4A200A02655 /* MMTabBarDemo */;
 			targetProxy = 7574709F1DE2F4A200A02655 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -710,7 +711,7 @@
 				INFOPLIST_FILE = MMTapBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMTabBarDemo;
 			};
 			name = Debug;
 		};
@@ -721,7 +722,7 @@
 				INFOPLIST_FILE = MMTapBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMTabBarDemo;
 			};
 			name = Release;
 		};
@@ -732,8 +733,8 @@
 				INFOPLIST_FILE = MMTapBarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTapBar.app/MMTapBar";
+				PRODUCT_NAME = MMTabBarDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTabBarDemo.app/MMTabBarDemo";
 			};
 			name = Debug;
 		};
@@ -744,8 +745,8 @@
 				INFOPLIST_FILE = MMTapBarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTapBar.app/MMTapBar";
+				PRODUCT_NAME = MMTabBarDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MMTabBarDemo.app/MMTabBarDemo";
 			};
 			name = Release;
 		};
@@ -755,7 +756,7 @@
 				INFOPLIST_FILE = MMTapBarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMTabBarDemo;
 				TEST_TARGET_NAME = MMTapBar;
 			};
 			name = Debug;
@@ -766,7 +767,7 @@
 				INFOPLIST_FILE = MMTapBarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMTabBarDemo;
 				TEST_TARGET_NAME = MMTapBar;
 			};
 			name = Release;
@@ -774,7 +775,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		757470751DE2F4A200A02655 /* Build configuration list for PBXProject "MMTapBar" */ = {
+		757470751DE2F4A200A02655 /* Build configuration list for PBXProject "MMTabBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757470A51DE2F4A200A02655 /* Debug */,
@@ -783,7 +784,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757470A71DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBar" */ = {
+		757470A71DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757470A81DE2F4A200A02655 /* Debug */,
@@ -792,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757470AA1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBarTests" */ = {
+		757470AA1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757470AB1DE2F4A200A02655 /* Debug */,
@@ -801,7 +802,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		757470AD1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTapBarUITests" */ = {
+		757470AD1DE2F4A200A02655 /* Build configuration list for PBXNativeTarget "MMTabBarDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757470AE1DE2F4A200A02655 /* Debug */,
