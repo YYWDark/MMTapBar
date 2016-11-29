@@ -12,7 +12,8 @@
 #import "UIColor+Extension.h"
 
 static const CGFloat titleFontSize = 14.0f;
-static  CGFloat titleHorizontalMargin = 10.0f;
+static  CGFloat titleHorizontalMargin = 10.0f;       //左右的边距
+static  CGFloat distanceBetweenTitles= 10.0f;        //title之间的距离
 static  CGFloat titleScrollViewToTop = 0.0f;
 static  CGFloat collectionViewToBottom = 0.0f;
 #define kScreenHeigth [UIScreen mainScreen].bounds.size.height

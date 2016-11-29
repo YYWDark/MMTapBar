@@ -99,7 +99,7 @@ static NSString *cellID = @"MMCell";
 
 //=====================================Underline=====================================
 - (UIColor *)tabBarViewControllerShowUnderlineBackgroundColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor blueColor];
+    return [UIColor colorWithHexString:@"3EBFFF"];
 }
 
 - (CGFloat)tabBarViewControllerShowUnderlineHeight:(MMTabBarViewController *)tabBarViewController{
@@ -112,7 +112,7 @@ static NSString *cellID = @"MMCell";
 }
 
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor whiteColor];
+    return [UIColor colorWithHexString:@"3EBFFF"];
 }
 
 //=====================================MarkView=====================================
@@ -168,14 +168,14 @@ static NSString *cellID = @"MMCell";
         
         [_dataArr addObject:model1];
         [_dataArr addObject:model2];
-        [_dataArr addObject:model3];
-        [_dataArr addObject:model4];
-        [_dataArr addObject:model5];
-        [_dataArr addObject:model6];
-        [_dataArr addObject:model7];
-        [_dataArr addObject:model8];
-        [_dataArr addObject:model9];
-        [_dataArr addObject:model10];
+//        [_dataArr addObject:model3];
+//        [_dataArr addObject:model4];
+//        [_dataArr addObject:model5];
+//        [_dataArr addObject:model6];
+//        [_dataArr addObject:model7];
+//        [_dataArr addObject:model8];
+//        [_dataArr addObject:model9];
+//        [_dataArr addObject:model10];
         
     }
     return _dataArr;

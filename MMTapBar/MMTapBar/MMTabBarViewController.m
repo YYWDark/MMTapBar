@@ -22,7 +22,7 @@ static NSString *identifer = @"cellID";
 @property (nonatomic, strong) NSMutableArray *titleWidthArray;          // store title widths
 @property (nonatomic, strong) NSMutableArray *leftMargins;              // store title originX
 @property (nonatomic, strong) NSMutableArray *titlleLabels;             // 储存标题的容器
-
+@property (nonatomic, strong) NSMutableArray *dataArray;                // 储存数据
 
 @property (nonatomic, assign) CGFloat titleContentWidth;                //titleScrollView 显示内容的总宽度
 @property (nonatomic, assign) CGFloat tabBarHeight;                     //titleScrollView的高度 default is 40.0f
@@ -56,11 +56,7 @@ static NSString *identifer = @"cellID";
     if (!self.dataSource) return;
     self.titleScrollView.frame = CGRectMake(0, titleScrollViewToTop, self.view.width, _tabBarHeight);
     self.collectionView.frame  = CGRectMake(0, self.titleScrollView.bottom, self.view.width, self.view.height - self.titleScrollView.bottom - collectionViewToBottom);
-  
-    
-    
-    
-    [self _calculateEachLabelTotalWidthAndTitleContentWidth];
+    [self _calculateTitleContentWidth];
     [self _layoutTitleScrollViewLayoutSubviews];
 }
 
@@ -70,9 +66,9 @@ static NSString *identifer = @"cellID";
 
 #pragma mark - private method
 - (void)_layoutTitleScrollViewLayoutSubviews {
-   
      NSUInteger titleCount = [self.dataSource numberOfItemsInViewController:self];
      CGFloat leftMargin = titleHorizontalMargin;
+    
      //layout labels
      for (int index = 0; index < titleCount; index ++) {
         [self.leftMargins addObject:@(leftMargin)];
@@ -82,9 +78,8 @@ static NSString *identifer = @"cellID";
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:titleFontSize];
-        label.frame = CGRectMake(leftMargin, 0,[self.titleWidthArray[index] floatValue] - 2*titleHorizontalMargin, self.tabBarHeight);
-        
-        leftMargin += [self.titleWidthArray[index] floatValue] ;
+        label.frame = CGRectMake(leftMargin, 0,[self.titleWidthArray[index] floatValue], self.tabBarHeight);
+        leftMargin += [self.titleWidthArray[index] floatValue] +distanceBetweenTitles  ;
         label.userInteractionEnabled = YES;
         label.tag = index;
         label.textColor = index?self.unselectedTitleColor:self.selectedTitleColor;
@@ -95,11 +90,8 @@ static NSString *identifer = @"cellID";
          UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondedToTapGestureRecognizer:)];
          [label addGestureRecognizer:tap];
     }
-    
-    
     [self _layoutGradientView:self.gradientType];
-    
-    self.titleScrollView.contentSize = CGSizeMake(self.titleContentWidth+10.0f, self.tabBarHeight);
+     self.titleScrollView.contentSize = CGSizeMake(self.titleContentWidth+10.0f, self.tabBarHeight);
 }
 
 - (void)_layoutGradientView:(MMTabBarViewGradientType)type{
@@ -120,17 +112,41 @@ static NSString *identifer = @"cellID";
 }
 
 /**
+ *  先计算titles是否可以占满屏幕 可以就一个一个的布局 不可以就修改distanceBetweenTitles的值。刚好去占满屏幕
+ */
+- (BOOL)_isTitlesContentNotLessThanViewWidth:(NSArray *)dataArray {
+    CGFloat titleContentWidth = titleHorizontalMargin;
+    for (int index = 0; index < dataArray.count; index ++) {
+        MMTabBarModel *model = dataArray[index];
+        CGFloat calculate = [NSObject widthFromString:model.controllerTitle withFont:[UIFont systemFontOfSize:titleFontSize] constraintToHeight:self.tabBarHeight];
+        [self.titleWidthArray addObject:@(calculate)];
+        titleContentWidth += calculate;
+        titleContentWidth += (index == dataArray.count -1)?titleHorizontalMargin:distanceBetweenTitles;
+    }
+    
+    return (titleContentWidth >= self.view.width);
+}
+
+
+/**
  *  计算每个title的宽度 和titleScrollView显示的宽度
  */
-- (void)_calculateEachLabelTotalWidthAndTitleContentWidth {
-    CGFloat titleContentWidth = 0.0f;
-    NSUInteger titleCount = [self.dataSource numberOfItemsInViewController:self];
-    for (int index = 0; index < titleCount; index ++) {
-        MMTabBarModel *model = [self.dataSource infomationInViewController:self infoForItemAtIndex:index];
-        CGFloat calculate = [NSObject widthFromString:model.controllerTitle withFont:[UIFont systemFontOfSize:titleFontSize] constraintToHeight:self.tabBarHeight];
-        CGFloat eachLabelTotalWidth = calculate + 2*titleHorizontalMargin;
-        titleContentWidth += eachLabelTotalWidth;
-        [self.titleWidthArray addObject:@(eachLabelTotalWidth)];
+- (void)_calculateTitleContentWidth {
+    if (![self _isTitlesContentNotLessThanViewWidth:self.dataArray]) {//如果为NO 则重新计算distanceBetweenTitles且contentWith 就是 self.view.width
+        CGFloat titlesTotalLength = 0.0f;
+        for (NSNumber *value in self.titleWidthArray) {
+            titlesTotalLength += [value floatValue];
+        }
+        distanceBetweenTitles = (self.view.width - titlesTotalLength - 2*titleHorizontalMargin)/(self.dataArray.count - 1);
+        self.titleContentWidth = self.view.width;
+        return;
+    }
+    
+    CGFloat titleContentWidth = titleHorizontalMargin;
+    for (int index = 0; index < self.titleWidthArray.count; index ++) {
+        titleContentWidth += [self.titleWidthArray[index] floatValue];
+        titleContentWidth += (index == self.titleWidthArray.count -1)?titleHorizontalMargin:distanceBetweenTitles;
+        
     }
     self.titleContentWidth = titleContentWidth;
 }
@@ -139,16 +155,14 @@ static NSString *identifer = @"cellID";
     self.titleWidthArray = [NSMutableArray array];
     self.leftMargins = [NSMutableArray array];
     self.titlleLabels = [NSMutableArray array];
+    self.dataArray = [NSMutableArray array];
     self.underlineHeight = 2.0f;
     self.tabBarHeight = 40.0f;
     self.maskViewCornerRadius = 8.0f;
-    
-//    self.navigationController.navigationBarHidden == NO ?YZNavBarH:statusH;
     titleScrollViewToTop = self.navigationController == nil?0.0:64.0;
     collectionViewToBottom = self.tabBarController == nil?0.0:49.0;
     //type
-    self.gradientType = MMTabBarViewGradientTypeMasking;
-    
+    self.gradientType = MMTabBarViewGradientTypeUnderline;
     //color
     self.selectedTitleColor = [UIColor redColor];
     self.unselectedTitleColor = [UIColor blackColor];
@@ -165,11 +179,9 @@ static NSString *identifer = @"cellID";
            case MMTabBarViewGradientTypeMasking:{
                 self.maskView.frame = CGRectMake([self.leftMargins[selectedIndex] floatValue], 5,[self.titleWidthArray[selectedIndex] floatValue] - 2*titleHorizontalMargin , self.tabBarHeight - 10);
                break;}
-               
            default:
                break;
        }
-     
    }];
 }
 
@@ -190,7 +202,41 @@ static NSString *identifer = @"cellID";
     [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
+- (void)_updateLinePositionWhenslidedOffsetX:(CGFloat)offsetX {
+    if (self.titleWidthArray.count == 0) return;
+    NSUInteger leftIndex =  offsetX/self.view.width;
+    NSUInteger rightIndex =  leftIndex + 1;
+    if (rightIndex >= self.titlleLabels.count )  return;
+    
+    //拿到滑动的距离
+    CGFloat slidedDistance = offsetX - self.lastOffsetX;
+    
+    CGFloat rightCenter = [self.titlleLabels[rightIndex] left];
+    CGFloat leftCenter  = [self.titlleLabels[leftIndex] left];
+    //拿到两个文本之间left的差
+    CGFloat centerDistance = rightCenter - leftCenter;
+    CGFloat titleWidthDistance = [self.titleWidthArray[rightIndex] floatValue] - [self.titleWidthArray[leftIndex] floatValue];
+    
+    // 计算当前下划线偏移量
+    CGFloat underLineoffsetX = slidedDistance * centerDistance / self.view.width;
+    // 宽度递增偏移量
+    CGFloat underLineWidth = slidedDistance * titleWidthDistance / self.view.width;
+    
+    self.underline.width += underLineWidth;
+    self.underline.left += underLineoffsetX;
+}
+
 #pragma mark -- custom dispaly style
+- (void)_addChildViewControllers{
+    if ([self.dataSource respondsToSelector:@selector(infomationsForViewController:)]) {
+        self.dataArray = [[self.dataSource infomationsForViewController:self] mutableCopy];
+        for (MMTabBarModel *model in self.dataArray) {
+            UIViewController *vc = [[NSClassFromString(model.controllerClassName) alloc] init];
+            [self addChildViewController:vc];
+        }
+    }
+}
+
 - (void)_customTabBar {
     if ([self.delegate respondsToSelector:@selector(tabBarViewControllerShowTitleScrollViewBackgroudColor:)]) {
         self.titleScrollViewBackgroundColor = [self.delegate tabBarViewControllerShowTitleScrollViewBackgroudColor:self];
@@ -207,7 +253,11 @@ static NSString *identifer = @"cellID";
     }
     
     if ([self.delegate respondsToSelector:@selector(tabBarViewControllerShowTitleSelectedColor:)]) {
-        self.selectedTitleColor =  [self.delegate tabBarViewControllerShowTitleSelectedColor:self];
+        self.selectedTitleColor  =  [self.delegate tabBarViewControllerShowTitleSelectedColor:self];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(tabBarViewControllerShowTitleMargin:)]) {
+        titleHorizontalMargin    =  [self.delegate tabBarViewControllerShowTitleMargin:self];
     }
 }
 
@@ -227,18 +277,7 @@ static NSString *identifer = @"cellID";
 }
 #pragma mark - public method
 - (void)reload{
-    if ([self.dataSource respondsToSelector:@selector(infomationsForViewController:)]) {
-        NSArray *array = [self.dataSource infomationsForViewController:self];
-      
-        for (MMTabBarModel *model in array) {
-            UIViewController *vc = [[NSClassFromString(model.controllerClassName) alloc] init];
-//             vc.view.frame = CGRectMake(0, 0, self.view.width,100);
-           [self addChildViewController:vc];
-        
-        }
-        
-    }
-    
+    [self _addChildViewControllers];
     [self _customTabBar];
     [self _customTitles];
     [self _customUnderline];
@@ -271,14 +310,12 @@ static NSString *identifer = @"cellID";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIViewController *vc = self.childViewControllers[indexPath.row];
     vc.view.frame = CGRectMake(0, 0, self.collectionView.width, self.collectionView.height);
     vc.view.backgroundColor = [UIColor randomColor];
     [cell.contentView addSubview:vc.view];
-    
     return cell;
 }
 
@@ -292,7 +329,7 @@ static NSString *identifer = @"cellID";
 
     }else if ([scrollView isMemberOfClass:[UICollectionView class]]){
         CGFloat offsetX = scrollView.contentOffset.x;
-       [self updateLinePositionWhenslidedOffsetX:offsetX];
+       [self _updateLinePositionWhenslidedOffsetX:offsetX];
         self.lastOffsetX = scrollView.contentOffset.x;
     }
     
@@ -307,31 +344,6 @@ static NSString *identifer = @"cellID";
         [self _updateSelectedTitle:self.pageIndex];
     }
 }
-
-- (void)updateLinePositionWhenslidedOffsetX:(CGFloat)offsetX {
-    if (self.titleWidthArray.count == 0) return;
-    NSUInteger leftIndex =  offsetX/self.view.width;
-    NSUInteger rightIndex =  leftIndex + 1;
-    if (rightIndex >= self.titlleLabels.count )  return;
-    
-    //拿到滑动的距离
-    CGFloat slidedDistance = offsetX - self.lastOffsetX;
-
-    CGFloat rightCenter = [self.titlleLabels[rightIndex] left];
-    CGFloat leftCenter  = [self.titlleLabels[leftIndex] left];
-    //拿到两个文本之间left的差
-    CGFloat centerDistance = rightCenter - leftCenter;
-    CGFloat titleWidthDistance = [self.titleWidthArray[rightIndex] floatValue] - [self.titleWidthArray[leftIndex] floatValue];
-    
-    // 计算当前下划线偏移量
-    CGFloat underLineoffsetX = slidedDistance * centerDistance / self.view.width;
-    // 宽度递增偏移量
-    CGFloat underLineWidth = slidedDistance * titleWidthDistance / self.view.width;
-    
-    self.underline.width += underLineWidth;
-    self.underline.left += underLineoffsetX;
-}
-
 
 #pragma mark - get
 - (UICollectionView *)collectionView {

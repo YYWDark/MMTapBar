@@ -46,6 +46,8 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 - (UIColor *)tabBarViewControllerShowTitleUnSelectedColor:(MMTabBarViewController *)tabBarViewController;
 //显示当前title选中标题的颜色
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController;
+//设置title到左右两边的间距 默认是10.0f;
+- (CGFloat)tabBarViewControllerShowTitleMargin:(MMTabBarViewController *)tabBarViewController;
 //=====================================Underline=====================================
 //显示当前下划线背景颜色颜色
 - (UIColor *)tabBarViewControllerShowUnderlineBackgroundColor:(MMTabBarViewController *)tabBarViewController;

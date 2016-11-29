@@ -41,7 +41,7 @@ static NSString *const MJCollectionViewCellIdentifier = @"color";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     // 设置尾部控件的显示和隐藏
-//    self.collectionView.mj_footer.hidden = self.colors.count == 0;
+    //    self.collectionView.mj_footer.hidden = self.colors.count == 0;
     return 40;
 }
 

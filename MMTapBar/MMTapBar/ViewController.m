@@ -126,14 +126,14 @@
         
         [_dataArr addObject:model1];
         [_dataArr addObject:model2];
-        [_dataArr addObject:model3];
-        [_dataArr addObject:model4];
-        [_dataArr addObject:model5];
-        [_dataArr addObject:model6];
-        [_dataArr addObject:model7];
-        [_dataArr addObject:model8];
-        [_dataArr addObject:model9];
-        [_dataArr addObject:model10];
+//        [_dataArr addObject:model3];
+//        [_dataArr addObject:model4];
+//        [_dataArr addObject:model5];
+//        [_dataArr addObject:model6];
+//        [_dataArr addObject:model7];
+//        [_dataArr addObject:model8];
+//        [_dataArr addObject:model9];
+//        [_dataArr addObject:model10];
        
     }
     return _dataArr;
