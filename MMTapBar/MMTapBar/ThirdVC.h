@@ -1,13 +1,13 @@
 //
-//  BaseViewController.h
+//  ThirdVC.h
 //  MMTapBar
 //
-//  Created by wyy on 16/11/28.
+//  Created by wyy on 16/11/29.
 //  Copyright © 2016年 yyx. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface OneVC : UIViewController
+@interface ThirdVC : UIViewController
 
 @end

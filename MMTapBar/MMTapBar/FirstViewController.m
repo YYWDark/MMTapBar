@@ -23,6 +23,7 @@ static NSString *cellID = @"MMCell";
     [super viewDidLoad];
     self.dataSource = self;
     self.delegate = self;
+    self.gradientType = MMTabBarViewGradientTypeUnderline;
     [self reload];
 //    [self.view addSubview:self.tableView];
 }
@@ -115,6 +116,9 @@ static NSString *cellID = @"MMCell";
     return [UIColor colorWithHexString:@"3EBFFF"];
 }
 
+//- (CGFloat)tabBarViewControllerShowTitleMargin:(MMTabBarViewController *)tabBarViewController{
+//    return 80.0;
+//}
 //=====================================MarkView=====================================
 //显示当前遮罩层的颜色
 - (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController{
@@ -127,23 +131,23 @@ static NSString *cellID = @"MMCell";
         _dataArr = [NSMutableArray array];
         
         MMTabBarModel *model1 = [[MMTabBarModel alloc] init];
-        model1.controllerClassName = @"BaseViewController";
+        model1.controllerClassName = @"OneVC";
         model1.controllerTitle = [NSString stringWithFormat:@"洛杉矶湖人"];
         
         MMTabBarModel *model2 = [[MMTabBarModel alloc] init];
-        model2.controllerClassName = @"OneVC";
+        model2.controllerClassName = @"SecondVC";
         model2.controllerTitle = [NSString stringWithFormat:@"雷霆"];
         
         MMTabBarModel *model3 = [[MMTabBarModel alloc] init];
-        model3.controllerClassName = @"SecondVC";
+        model3.controllerClassName = @"ThirdVC";
         model3.controllerTitle = [NSString stringWithFormat:@"凯尔特人"];
         
         MMTabBarModel *model4 = [[MMTabBarModel alloc] init];
-        model4.controllerClassName = @"UIViewController";
+        model4.controllerClassName = @"FourthVC";
         model4.controllerTitle = [NSString stringWithFormat:@"尼克斯"];
         
         MMTabBarModel *model5 = [[MMTabBarModel alloc] init];
-        model5.controllerClassName = @"UIViewController";
+        model5.controllerClassName = @"FivethVC";
         model5.controllerTitle = [NSString stringWithFormat:@"明尼苏达森林狼"];
         
         MMTabBarModel *model6 = [[MMTabBarModel alloc] init];
@@ -168,9 +172,9 @@ static NSString *cellID = @"MMCell";
         
         [_dataArr addObject:model1];
         [_dataArr addObject:model2];
-//        [_dataArr addObject:model3];
-//        [_dataArr addObject:model4];
-//        [_dataArr addObject:model5];
+        [_dataArr addObject:model3];
+        [_dataArr addObject:model4];
+        [_dataArr addObject:model5];
 //        [_dataArr addObject:model6];
 //        [_dataArr addObject:model7];
 //        [_dataArr addObject:model8];
