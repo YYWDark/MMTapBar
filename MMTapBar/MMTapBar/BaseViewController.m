@@ -26,14 +26,8 @@ static NSString *cellID = @"MMCell";
 {
     [super viewDidLayoutSubviews];
     self.tableView.frame = CGRectMake(0, kNavigationHeight, self.view.frame.size.width, self.view.frame.size.height - kNavigationHeight );
-
     
 }
-
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//     [self.view addSubview:self.tableView];
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

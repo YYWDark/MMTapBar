@@ -219,6 +219,12 @@ static NSString *identifer = @"cellID";
         self.underlineHeight = [self.delegate tabBarViewControllerShowUnderlineHeight:self];
     }
 }
+
+- (void)_customMarkView {
+    if ([self.delegate respondsToSelector:@selector(tabBarViewControllerShowMarkViewBackgroundColor:)]) {
+        self.maskBackBackgroundColor = [self.delegate tabBarViewControllerShowMarkViewBackgroundColor:self];
+    }
+}
 #pragma mark - public method
 - (void)reload{
     if ([self.dataSource respondsToSelector:@selector(infomationsForViewController:)]) {
@@ -236,6 +242,7 @@ static NSString *identifer = @"cellID";
     [self _customTabBar];
     [self _customTitles];
     [self _customUnderline];
+    [self _customMarkView];
     [self.collectionView reloadData];
 }
 
@@ -376,7 +383,7 @@ static NSString *identifer = @"cellID";
 - (UIView *)maskView {
     if (!_maskView) {
         _maskView = [[UIView alloc] init];
-        _maskView.backgroundColor = [UIColor lightGrayColor];
+        _maskView.backgroundColor = self.maskBackBackgroundColor;
         _maskView.opaque = .1;
         _maskView.layer.masksToBounds = YES;
         _maskView.layer.cornerRadius = self.maskViewCornerRadius;

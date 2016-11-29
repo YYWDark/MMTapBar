@@ -22,6 +22,7 @@
 		757470C21DE3E62D00A02655 /* NSObject+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C11DE3E62D00A02655 /* NSObject+Calculate.m */; };
 		757470C61DE3E95800A02655 /* MMTabBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C51DE3E95800A02655 /* MMTabBarCell.m */; };
 		757470C91DE3F5C500A02655 /* MMTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C81DE3F5C500A02655 /* MMTitleScrollView.m */; };
+		7597761D1DED096700A77EC4 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597761C1DED096700A77EC4 /* SecondVC.m */; };
 		75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB97491DE6DBEF007A43CC /* FirstViewController.m */; };
 		75BB974E1DEC1C0F007A43CC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB974D1DEC1C0F007A43CC /* BaseViewController.m */; };
 		75BB97511DEC1CAA007A43CC /* OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB97501DEC1CAA007A43CC /* OneVC.m */; };
@@ -76,6 +77,8 @@
 		757470C51DE3E95800A02655 /* MMTabBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarCell.m; sourceTree = "<group>"; };
 		757470C71DE3F5C500A02655 /* MMTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTitleScrollView.h; sourceTree = "<group>"; };
 		757470C81DE3F5C500A02655 /* MMTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTitleScrollView.m; sourceTree = "<group>"; };
+		7597761B1DED096700A77EC4 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		7597761C1DED096700A77EC4 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 		75BB97481DE6DBEF007A43CC /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		75BB97491DE6DBEF007A43CC /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		75BB974C1DEC1C0F007A43CC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				75BB974D1DEC1C0F007A43CC /* BaseViewController.m */,
 				75BB974F1DEC1CAA007A43CC /* OneVC.h */,
 				75BB97501DEC1CAA007A43CC /* OneVC.m */,
+				7597761B1DED096700A77EC4 /* SecondVC.h */,
+				7597761C1DED096700A77EC4 /* SecondVC.m */,
 			);
 			name = subViewControllers;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */,
 				75BB974E1DEC1C0F007A43CC /* BaseViewController.m in Sources */,
 				757470C21DE3E62D00A02655 /* NSObject+Calculate.m in Sources */,
+				7597761D1DED096700A77EC4 /* SecondVC.m in Sources */,
 				757470BA1DE3D62F00A02655 /* UIView+Extension.m in Sources */,
 				757470851DE2F4A200A02655 /* ViewController.m in Sources */,
 				757470821DE2F4A200A02655 /* AppDelegate.m in Sources */,

@@ -36,22 +36,24 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 
 @protocol MMTabBarViewDelegate <NSObject>
 @optional
-//=====================================tabBar=====================================
+//=====================================TabBar=====================================
 //显示当前titleScrollView背景的颜色
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController;
 //显示当前ScrollViewHeight的高度
 - (CGFloat)tabBarViewControllerShowTitleScrollViewHeight:(MMTabBarViewController *)tabBarViewController;
-
-//=====================================titles=====================================
+//=====================================Titles=====================================
 //显示当前title没有选中标题的颜色
 - (UIColor *)tabBarViewControllerShowTitleUnSelectedColor:(MMTabBarViewController *)tabBarViewController;
 //显示当前title选中标题的颜色
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController;
-
 //=====================================Underline=====================================
 //显示当前下划线背景颜色颜色
 - (UIColor *)tabBarViewControllerShowUnderlineBackgroundColor:(MMTabBarViewController *)tabBarViewController;
 //显示当前下划线高度
 - (CGFloat)tabBarViewControllerShowUnderlineHeight:(MMTabBarViewController *)tabBarViewController;
-
+//=====================================MarkView=====================================
+//显示当前遮罩层的颜色
+- (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController;
 @end
+
+

@@ -7,10 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "MMHeader.h"
 #import "OneVC.h"
-
-#import "FirstViewController.h"
-static const CGFloat kNavigationHeight = 0.0;
+#import "SecondVC.h"
 static NSString *cellID = @"MMCell";
 
 @interface FirstViewController () <MMTabBarViewDataSource, MMTabBarViewDelegate>
@@ -91,7 +90,7 @@ static NSString *cellID = @"MMCell";
 #pragma mark - MMTabBarViewDelegate
 //=====================================tabBar=====================================
 - (UIColor *)tabBarViewControllerShowTitleScrollViewBackgroudColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor yellowColor];
+    return [UIColor whiteColor];
 }
 
 - (CGFloat)tabBarViewControllerShowTitleScrollViewHeight:(MMTabBarViewController *)tabBarViewController{
@@ -109,11 +108,17 @@ static NSString *cellID = @"MMCell";
 
 //=====================================titles=====================================
 - (UIColor *)tabBarViewControllerShowTitleUnSelectedColor:(MMTabBarViewController *)tabBarViewController{
-    return [UIColor blackColor];
+    return [UIColor colorWithHexString:@"333333"];
 }
 
 - (UIColor *)tabBarViewControllerShowTitleSelectedColor:(MMTabBarViewController *)tabBarViewController{
     return [UIColor whiteColor];
+}
+
+//=====================================MarkView=====================================
+//显示当前遮罩层的颜色
+- (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController{
+    return [UIColor colorWithHexString:@"3EBFFF"];
 }
 
 #pragma mark - get
@@ -130,7 +135,7 @@ static NSString *cellID = @"MMCell";
         model2.controllerTitle = [NSString stringWithFormat:@"雷霆"];
         
         MMTabBarModel *model3 = [[MMTabBarModel alloc] init];
-        model3.controllerClassName = @"UIViewController";
+        model3.controllerClassName = @"SecondVC";
         model3.controllerTitle = [NSString stringWithFormat:@"凯尔特人"];
         
         MMTabBarModel *model4 = [[MMTabBarModel alloc] init];
