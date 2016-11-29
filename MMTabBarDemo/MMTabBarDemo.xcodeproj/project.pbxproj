@@ -9,17 +9,11 @@
 /* Begin PBXBuildFile section */
 		7574707F1DE2F4A200A02655 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7574707E1DE2F4A200A02655 /* main.m */; };
 		757470821DE2F4A200A02655 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470811DE2F4A200A02655 /* AppDelegate.m */; };
-		757470851DE2F4A200A02655 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470841DE2F4A200A02655 /* ViewController.m */; };
 		757470881DE2F4A200A02655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757470861DE2F4A200A02655 /* Main.storyboard */; };
 		7574708A1DE2F4A200A02655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757470891DE2F4A200A02655 /* Assets.xcassets */; };
 		7574708D1DE2F4A200A02655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7574708B1DE2F4A200A02655 /* LaunchScreen.storyboard */; };
 		757470981DE2F4A200A02655 /* MMTapBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470971DE2F4A200A02655 /* MMTapBarTests.m */; };
 		757470A31DE2F4A200A02655 /* MMTapBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470A21DE2F4A200A02655 /* MMTapBarUITests.m */; };
-		757470B21DE3D43200A02655 /* MMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470B11DE3D43200A02655 /* MMTabBarViewController.m */; };
-		757470B91DE3D62F00A02655 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470B61DE3D62F00A02655 /* UIColor+Extension.m */; };
-		757470BA1DE3D62F00A02655 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470B81DE3D62F00A02655 /* UIView+Extension.m */; };
-		757470BF1DE3D7F300A02655 /* MMTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470BE1DE3D7F300A02655 /* MMTabBarModel.m */; };
-		757470C21DE3E62D00A02655 /* NSObject+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470C11DE3E62D00A02655 /* NSObject+Calculate.m */; };
 		7597761D1DED096700A77EC4 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597761C1DED096700A77EC4 /* SecondVC.m */; };
 		759776201DED4D7500A77EC4 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597761F1DED4D7500A77EC4 /* ThirdVC.m */; };
 		759776231DED4DBC00A77EC4 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 759776221DED4DBC00A77EC4 /* FourthVC.m */; };
@@ -46,6 +40,11 @@
 		7597766A1DED519300A77EC4 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 759776561DED519300A77EC4 /* UIView+MJExtension.m */; };
 		75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB97491DE6DBEF007A43CC /* FirstViewController.m */; };
 		75BB974E1DEC1C0F007A43CC /* OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB974D1DEC1C0F007A43CC /* OneVC.m */; };
+		75E43D721DED6B2D00E56188 /* NSObject+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E43D651DED6B2D00E56188 /* NSObject+Calculate.m */; };
+		75E43D731DED6B2D00E56188 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E43D671DED6B2D00E56188 /* UIColor+Extension.m */; };
+		75E43D741DED6B2D00E56188 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E43D691DED6B2D00E56188 /* UIView+Extension.m */; };
+		75E43D751DED6B2D00E56188 /* MMTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E43D6E1DED6B2D00E56188 /* MMTabBarModel.m */; };
+		75E43D761DED6B2D00E56188 /* MMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E43D711DED6B2D00E56188 /* MMTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +69,6 @@
 		7574707E1DE2F4A200A02655 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		757470801DE2F4A200A02655 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		757470811DE2F4A200A02655 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		757470831DE2F4A200A02655 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		757470841DE2F4A200A02655 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		757470871DE2F4A200A02655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		757470891DE2F4A200A02655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7574708C1DE2F4A200A02655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,17 +79,6 @@
 		7574709E1DE2F4A200A02655 /* MMTabBarDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTabBarDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757470A21DE2F4A200A02655 /* MMTapBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTapBarUITests.m; sourceTree = "<group>"; };
 		757470A41DE2F4A200A02655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		757470B01DE3D43200A02655 /* MMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarViewController.h; sourceTree = "<group>"; };
-		757470B11DE3D43200A02655 /* MMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarViewController.m; sourceTree = "<group>"; };
-		757470B51DE3D62F00A02655 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
-		757470B61DE3D62F00A02655 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
-		757470B71DE3D62F00A02655 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		757470B81DE3D62F00A02655 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		757470BB1DE3D63B00A02655 /* MMHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMHeader.h; sourceTree = "<group>"; };
-		757470BD1DE3D7F300A02655 /* MMTabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarModel.h; sourceTree = "<group>"; };
-		757470BE1DE3D7F300A02655 /* MMTabBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarModel.m; sourceTree = "<group>"; };
-		757470C01DE3E62D00A02655 /* NSObject+Calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Calculate.h"; sourceTree = "<group>"; };
-		757470C11DE3E62D00A02655 /* NSObject+Calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Calculate.m"; sourceTree = "<group>"; };
 		7597761B1DED096700A77EC4 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
 		7597761C1DED096700A77EC4 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 		7597761E1DED4D7500A77EC4 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
@@ -145,6 +131,17 @@
 		75BB97491DE6DBEF007A43CC /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		75BB974C1DEC1C0F007A43CC /* OneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneVC.h; sourceTree = "<group>"; };
 		75BB974D1DEC1C0F007A43CC /* OneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneVC.m; sourceTree = "<group>"; };
+		75E43D641DED6B2D00E56188 /* NSObject+Calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Calculate.h"; sourceTree = "<group>"; };
+		75E43D651DED6B2D00E56188 /* NSObject+Calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Calculate.m"; sourceTree = "<group>"; };
+		75E43D661DED6B2D00E56188 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		75E43D671DED6B2D00E56188 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		75E43D681DED6B2D00E56188 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		75E43D691DED6B2D00E56188 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		75E43D6B1DED6B2D00E56188 /* MMHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHeader.h; sourceTree = "<group>"; };
+		75E43D6D1DED6B2D00E56188 /* MMTabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarModel.h; sourceTree = "<group>"; };
+		75E43D6E1DED6B2D00E56188 /* MMTabBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarModel.m; sourceTree = "<group>"; };
+		75E43D701DED6B2D00E56188 /* MMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarViewController.h; sourceTree = "<group>"; };
+		75E43D711DED6B2D00E56188 /* MMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,13 +192,11 @@
 		7574707C1DE2F4A200A02655 /* MMTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				75E43D621DED6B2D00E56188 /* MMGroup */,
 				759776281DED519200A77EC4 /* MJRefresh */,
 				75BB974B1DEC1BAC007A43CC /* SubViewcontrollers */,
-				75BB97461DE6DBAB007A43CC /* MMGroup */,
 				757470801DE2F4A200A02655 /* AppDelegate.h */,
 				757470811DE2F4A200A02655 /* AppDelegate.m */,
-				757470831DE2F4A200A02655 /* ViewController.h */,
-				757470841DE2F4A200A02655 /* ViewController.m */,
 				75BB97481DE6DBEF007A43CC /* FirstViewController.h */,
 				75BB97491DE6DBEF007A43CC /* FirstViewController.m */,
 				757470861DE2F4A200A02655 /* Main.storyboard */,
@@ -238,37 +233,6 @@
 				757470A41DE2F4A200A02655 /* Info.plist */,
 			);
 			path = MMTapBarUITests;
-			sourceTree = "<group>";
-		};
-		757470B31DE3D43F00A02655 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				757470B01DE3D43200A02655 /* MMTabBarViewController.h */,
-				757470B11DE3D43200A02655 /* MMTabBarViewController.m */,
-			);
-			name = VC;
-			sourceTree = "<group>";
-		};
-		757470B41DE3D61A00A02655 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				757470C01DE3E62D00A02655 /* NSObject+Calculate.h */,
-				757470C11DE3E62D00A02655 /* NSObject+Calculate.m */,
-				757470B51DE3D62F00A02655 /* UIColor+Extension.h */,
-				757470B61DE3D62F00A02655 /* UIColor+Extension.m */,
-				757470B71DE3D62F00A02655 /* UIView+Extension.h */,
-				757470B81DE3D62F00A02655 /* UIView+Extension.m */,
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
-		757470BC1DE3D72900A02655 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				757470BD1DE3D7F300A02655 /* MMTabBarModel.h */,
-				757470BE1DE3D7F300A02655 /* MMTabBarModel.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		759776281DED519200A77EC4 /* MJRefresh */ = {
@@ -366,25 +330,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		75BB97461DE6DBAB007A43CC /* MMGroup */ = {
-			isa = PBXGroup;
-			children = (
-				75BB97471DE6DBC8007A43CC /* Header */,
-				757470BC1DE3D72900A02655 /* Model */,
-				757470B41DE3D61A00A02655 /* Category */,
-				757470B31DE3D43F00A02655 /* VC */,
-			);
-			name = MMGroup;
-			sourceTree = "<group>";
-		};
-		75BB97471DE6DBC8007A43CC /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				757470BB1DE3D63B00A02655 /* MMHeader.h */,
-			);
-			name = Header;
-			sourceTree = "<group>";
-		};
 		75BB974B1DEC1BAC007A43CC /* SubViewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +345,56 @@
 				759776251DED4DCD00A77EC4 /* FivethVC.m */,
 			);
 			name = SubViewcontrollers;
+			sourceTree = "<group>";
+		};
+		75E43D621DED6B2D00E56188 /* MMGroup */ = {
+			isa = PBXGroup;
+			children = (
+				75E43D631DED6B2D00E56188 /* MMCategory */,
+				75E43D6A1DED6B2D00E56188 /* MMHeader */,
+				75E43D6C1DED6B2D00E56188 /* MMModel */,
+				75E43D6F1DED6B2D00E56188 /* MMViewController */,
+			);
+			path = MMGroup;
+			sourceTree = "<group>";
+		};
+		75E43D631DED6B2D00E56188 /* MMCategory */ = {
+			isa = PBXGroup;
+			children = (
+				75E43D641DED6B2D00E56188 /* NSObject+Calculate.h */,
+				75E43D651DED6B2D00E56188 /* NSObject+Calculate.m */,
+				75E43D661DED6B2D00E56188 /* UIColor+Extension.h */,
+				75E43D671DED6B2D00E56188 /* UIColor+Extension.m */,
+				75E43D681DED6B2D00E56188 /* UIView+Extension.h */,
+				75E43D691DED6B2D00E56188 /* UIView+Extension.m */,
+			);
+			path = MMCategory;
+			sourceTree = "<group>";
+		};
+		75E43D6A1DED6B2D00E56188 /* MMHeader */ = {
+			isa = PBXGroup;
+			children = (
+				75E43D6B1DED6B2D00E56188 /* MMHeader.h */,
+			);
+			path = MMHeader;
+			sourceTree = "<group>";
+		};
+		75E43D6C1DED6B2D00E56188 /* MMModel */ = {
+			isa = PBXGroup;
+			children = (
+				75E43D6D1DED6B2D00E56188 /* MMTabBarModel.h */,
+				75E43D6E1DED6B2D00E56188 /* MMTabBarModel.m */,
+			);
+			path = MMModel;
+			sourceTree = "<group>";
+		};
+		75E43D6F1DED6B2D00E56188 /* MMViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75E43D701DED6B2D00E56188 /* MMTabBarViewController.h */,
+				75E43D711DED6B2D00E56188 /* MMTabBarViewController.m */,
+			);
+			path = MMViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,34 +529,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BB974A1DE6DBEF007A43CC /* FirstViewController.m in Sources */,
+				75E43D761DED6B2D00E56188 /* MMTabBarViewController.m in Sources */,
+				75E43D751DED6B2D00E56188 /* MMTabBarModel.m in Sources */,
 				7597765C1DED519300A77EC4 /* MJRefreshAutoGifFooter.m in Sources */,
 				75BB974E1DEC1C0F007A43CC /* OneVC.m in Sources */,
 				7597765F1DED519300A77EC4 /* MJRefreshBackGifFooter.m in Sources */,
-				757470C21DE3E62D00A02655 /* NSObject+Calculate.m in Sources */,
 				7597761D1DED096700A77EC4 /* SecondVC.m in Sources */,
 				759776261DED4DCD00A77EC4 /* FivethVC.m in Sources */,
 				759776591DED519300A77EC4 /* MJRefreshComponent.m in Sources */,
+				75E43D731DED6B2D00E56188 /* UIColor+Extension.m in Sources */,
 				759776631DED519300A77EC4 /* MJRefreshNormalHeader.m in Sources */,
-				757470BA1DE3D62F00A02655 /* UIView+Extension.m in Sources */,
 				759776691DED519300A77EC4 /* UIScrollView+MJRefresh.m in Sources */,
 				759776581DED519300A77EC4 /* MJRefreshBackFooter.m in Sources */,
 				759776231DED4DBC00A77EC4 /* FourthVC.m in Sources */,
 				759776601DED519300A77EC4 /* MJRefreshBackNormalFooter.m in Sources */,
 				7597765A1DED519300A77EC4 /* MJRefreshFooter.m in Sources */,
 				7597765B1DED519300A77EC4 /* MJRefreshHeader.m in Sources */,
-				757470851DE2F4A200A02655 /* ViewController.m in Sources */,
 				7597765D1DED519300A77EC4 /* MJRefreshAutoNormalFooter.m in Sources */,
 				757470821DE2F4A200A02655 /* AppDelegate.m in Sources */,
 				759776661DED519300A77EC4 /* MJRefreshConst.m in Sources */,
-				757470B91DE3D62F00A02655 /* UIColor+Extension.m in Sources */,
-				757470B21DE3D43200A02655 /* MMTabBarViewController.m in Sources */,
+				75E43D741DED6B2D00E56188 /* UIView+Extension.m in Sources */,
 				759776201DED4D7500A77EC4 /* ThirdVC.m in Sources */,
 				7597765E1DED519300A77EC4 /* MJRefreshAutoStateFooter.m in Sources */,
-				757470BF1DE3D7F300A02655 /* MMTabBarModel.m in Sources */,
 				759776641DED519300A77EC4 /* MJRefreshStateHeader.m in Sources */,
 				759776671DED519300A77EC4 /* NSBundle+MJRefresh.m in Sources */,
 				759776621DED519300A77EC4 /* MJRefreshGifHeader.m in Sources */,
 				7574707F1DE2F4A200A02655 /* main.m in Sources */,
+				75E43D721DED6B2D00E56188 /* NSObject+Calculate.m in Sources */,
 				7597766A1DED519300A77EC4 /* UIView+MJExtension.m in Sources */,
 				759776681DED519300A77EC4 /* UIScrollView+MJExtension.m in Sources */,
 				759776571DED519300A77EC4 /* MJRefreshAutoFooter.m in Sources */,
