@@ -104,4 +104,5 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 ![4.gif](http://upload-images.jianshu.io/upload_images/307963-06feaca999553355.gif?imageMogr2/auto-orient/strip)
 
 其他样式请见demo
+如果你觉得这篇文章对你有所帮助，欢迎like或star!谢谢！
 文章地址:http://www.jianshu.com/p/084c660d5fc5
