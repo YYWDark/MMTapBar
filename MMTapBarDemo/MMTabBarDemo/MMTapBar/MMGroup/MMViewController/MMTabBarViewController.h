@@ -6,8 +6,9 @@
 //  Copyright © 2016年 yyx. All rights reserved.
 //
 
-#import "ViewController.h"
+
 #import "MMTabBarModel.h"
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
     MMTabBarViewGradientTypeNormal = 0,     //no underline and no mask
