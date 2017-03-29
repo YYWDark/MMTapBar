@@ -32,7 +32,7 @@ static NSString *cellID = @"MMCell";
     self.dataSource = self;
     self.delegate = self;
     //指定样式
-    self.gradientType = MMTabBarViewGradientTypeMasking;
+    self.gradientType = MMTabBarViewGradientTypeUnderline;
     [self reload];
 }
 

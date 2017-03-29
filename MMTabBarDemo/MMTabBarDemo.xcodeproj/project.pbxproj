@@ -102,6 +102,7 @@
 		751592071E8BD1880019DFE4 /* MMTapBar */ = {
 			isa = PBXGroup;
 			children = (
+				752E49C21E8BDE940090A9A4 /* VC */,
 				751592081E8BD1880019DFE4 /* AppDelegate.h */,
 				751592091E8BD1880019DFE4 /* AppDelegate.m */,
 				7515920A1E8BD1880019DFE4 /* Assets.xcassets */,
@@ -109,12 +110,19 @@
 				7515920D1E8BD1880019DFE4 /* Main.storyboard */,
 				7515920F1E8BD1880019DFE4 /* FirstViewController.h */,
 				751592101E8BD1880019DFE4 /* FirstViewController.m */,
+				751592151E8BD1880019DFE4 /* Info.plist */,
+				751592161E8BD1880019DFE4 /* main.m */,
+			);
+			path = MMTapBar;
+			sourceTree = "<group>";
+		};
+		752E49C21E8BDE940090A9A4 /* VC */ = {
+			isa = PBXGroup;
+			children = (
 				751592111E8BD1880019DFE4 /* FivethVC.h */,
 				751592121E8BD1880019DFE4 /* FivethVC.m */,
 				751592131E8BD1880019DFE4 /* FourthVC.h */,
 				751592141E8BD1880019DFE4 /* FourthVC.m */,
-				751592151E8BD1880019DFE4 /* Info.plist */,
-				751592161E8BD1880019DFE4 /* main.m */,
 				751592561E8BD1880019DFE4 /* OneVC.h */,
 				751592571E8BD1880019DFE4 /* OneVC.m */,
 				751592581E8BD1880019DFE4 /* SecondVC.h */,
@@ -122,7 +130,7 @@
 				7515925A1E8BD1880019DFE4 /* ThirdVC.h */,
 				7515925B1E8BD1880019DFE4 /* ThirdVC.m */,
 			);
-			path = MMTapBar;
+			name = VC;
 			sourceTree = "<group>";
 		};
 		757470711DE2F4A200A02655 = {
