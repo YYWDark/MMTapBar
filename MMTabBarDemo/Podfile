@@ -6,5 +6,5 @@ platform :ios, ‘8.0’
 
 target 'MMTabBarDemo' do
 pod 'MJRefresh'
-
+pod 'MMTabBar'
 end
