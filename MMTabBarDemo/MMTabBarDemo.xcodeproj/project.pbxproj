@@ -19,6 +19,7 @@
 		7515927E1E8BD1880019DFE4 /* OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 751592571E8BD1880019DFE4 /* OneVC.m */; };
 		7515927F1E8BD1880019DFE4 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 751592591E8BD1880019DFE4 /* SecondVC.m */; };
 		751592801E8BD1880019DFE4 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7515925B1E8BD1880019DFE4 /* ThirdVC.m */; };
+		7537F12F1E8FA99500197FC1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7537F12E1E8FA99500197FC1 /* SecondViewController.m */; };
 		757470981DE2F4A200A02655 /* MMTapBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470971DE2F4A200A02655 /* MMTapBarTests.m */; };
 		757470A31DE2F4A200A02655 /* MMTapBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 757470A21DE2F4A200A02655 /* MMTapBarUITests.m */; };
 		EBE1340558F3AAE5F1F2A207 /* libPods-MMTabBarDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D56ED0A45FD88E2697F9194 /* libPods-MMTabBarDemo.a */; };
@@ -64,6 +65,8 @@
 		751592591E8BD1880019DFE4 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 		7515925A1E8BD1880019DFE4 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
 		7515925B1E8BD1880019DFE4 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		7537F12D1E8FA99500197FC1 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		7537F12E1E8FA99500197FC1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		7574707A1DE2F4A200A02655 /* MMTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757470931DE2F4A200A02655 /* MMTabBarDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMTabBarDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757470971DE2F4A200A02655 /* MMTapBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTapBarTests.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				751592101E8BD1880019DFE4 /* FirstViewController.m */,
 				751592151E8BD1880019DFE4 /* Info.plist */,
 				751592161E8BD1880019DFE4 /* main.m */,
+				7537F12D1E8FA99500197FC1 /* SecondViewController.h */,
+				7537F12E1E8FA99500197FC1 /* SecondViewController.m */,
 			);
 			path = MMTapBar;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				TargetAttributes = {
 					757470791DE2F4A200A02655 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 65Y8F76Y6Z;
 					};
 					757470921DE2F4A200A02655 = {
 						CreatedOnToolsVersion = 7.3;
@@ -372,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7537F12F1E8FA99500197FC1 /* SecondViewController.m in Sources */,
 				7515927F1E8BD1880019DFE4 /* SecondVC.m in Sources */,
 				751592641E8BD1880019DFE4 /* main.m in Sources */,
 				7515925C1E8BD1880019DFE4 /* AppDelegate.m in Sources */,
@@ -523,6 +530,7 @@
 			baseConfigurationReference = 09E65A734CF9523285A70B4A /* Pods-MMTabBarDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 65Y8F76Y6Z;
 				INFOPLIST_FILE = MMTapBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBar;
@@ -535,6 +543,7 @@
 			baseConfigurationReference = 685A27998F3FFE9F0113BBAB /* Pods-MMTabBarDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 65Y8F76Y6Z;
 				INFOPLIST_FILE = MMTapBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xw.MMTapBar;

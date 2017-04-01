@@ -14,13 +14,17 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
     MMTabBarViewGradientTypeMasking= 2,     //only mask
 };
 
+typedef NS_ENUM(NSUInteger, MMTabBarViewTextDisplayType) {
+    MMTabBarViewTextLayoutByTextLength,    //default 根据title长度计算
+    MMTabBarViewTextLayoutByEqualDivision  //屏幕平均分配
+};
 @protocol MMTabBarViewDataSource;
 @protocol MMTabBarViewDelegate;
 @interface MMTabBarViewController : UIViewController
 @property (nonatomic, weak) id<MMTabBarViewDataSource> dataSource;
 @property (nonatomic, weak) id<MMTabBarViewDelegate> delegate;
 @property (nonatomic, assign) MMTabBarViewGradientType gradientType;     //default is MMTabBarViewGradientTypeNormal
-
+@property (nonatomic, assign) MMTabBarViewTextDisplayType layoutType;;
 - (void)reload;
 @end
 
