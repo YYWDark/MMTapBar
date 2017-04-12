@@ -1,6 +1,6 @@
 ![MMTapBar.png](http://upload-images.jianshu.io/upload_images/307963-690af2d4a0f3e942.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##1.支持的样式
+## 支持的样式
 目前支持三种样式：
 ```
 typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
@@ -18,11 +18,11 @@ typedef NS_ENUM(NSUInteger, MMTabBarViewGradientType) {
 
 
 
-##2.初始化方式
+## 初始化方式
 
 ###Installation
 
-1.using CocoaPods:
+### 1.using CocoaPods:
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '6.0'
@@ -33,7 +33,7 @@ end
 ```
 2.by cloning the project into your repository:
 
-###How To Use：
+###  2.How To Use：
 > * 如demo中的`FirstViewController`继承于`MMTabBarViewController`
 > * 签订`MMTabBarViewDataSource，MMTabBarViewDelegate` 两个协议。你可以参考`UITableViewDataSource`,`UITableViewDelegate`。`MMTabBarViewDataSource`是必须实现的，因为它提供驱动视图的数据。而`MMTabBarViewDelegate`协议是可选的，它提供了对视图布局的自定义方式。参考第三部分的扩展方式。
 
@@ -84,7 +84,7 @@ end
 }
 ```
 
-##3.通过可选的协议自定义自己想要的界面。
+### 3.通过可选的协议自定义自己想要的界面。
 
 ```
 @protocol MMTabBarViewDelegate <NSObject>
@@ -111,7 +111,7 @@ end
 - (UIColor *)tabBarViewControllerShowMarkViewBackgroundColor:(MMTabBarViewController *)tabBarViewController;
 @end
 ```
-##4.demo效果：
+## demo效果：
 `MMTabBarViewGradientTypeMasking ` 没有扩展的样式：
 
 
