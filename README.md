@@ -1,3 +1,4 @@
+![MMTapBar.png](http://upload-images.jianshu.io/upload_images/307963-690af2d4a0f3e942.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##1.支持的样式
 目前支持三种样式：
